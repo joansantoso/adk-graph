@@ -1,4 +1,0 @@
-google-adk>=2.0
-gradio>=5
-python-dotenv
-pytest
