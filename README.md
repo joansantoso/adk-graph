@@ -92,7 +92,7 @@ claimflow/
 
 - Python 3.10 or newer
 - A version of Google ADK that includes graph workflows (`google.adk.Workflow`, ADK 2.0)
-- A Gemini API key from [Google AI Studio](https://aistudio.google.com/), or a Google Cloud project with Vertex AI enabled
+- A Gemini API key from [Google AI Studio](https://aistudio.google.com/), or a Google Cloud project with the Gemini platform API (`aiplatform.googleapis.com`) enabled
 
 ### Install
 
@@ -110,20 +110,20 @@ Create a `.env` file inside the `claimflow/` package folder:
 
 ```dotenv
 # Gemini via Google AI Studio
-GOOGLE_GENAI_USE_VERTEXAI=FALSE
+GOOGLE_GENAI_USE_ENTERPRISE=FALSE
 GOOGLE_API_KEY=your-api-key
 
-# Or Gemini via Vertex AI
-# GOOGLE_GENAI_USE_VERTEXAI=TRUE
+# Or Gemini on Google Cloud
+# GOOGLE_GENAI_USE_ENTERPRISE=TRUE
 # GOOGLE_CLOUD_PROJECT=your-project-id
-# GOOGLE_CLOUD_LOCATION=us-central1
+# GOOGLE_CLOUD_LOCATION=global
 
 # Demo switch: 1 (default) makes the first fraud-service call fail so you can
 # watch the retry policy work. Set to 0 to turn the simulated failure off.
 CLAIMFLOW_FLAKY=1
 ```
 
-All agents use the model set in `agents.py` (`MODEL = "gemini-flash-latest"`).
+All agents use the model set in `agents.py` (`MODEL = "gemini-3.8-flash"`).
 
 ### Run
 
