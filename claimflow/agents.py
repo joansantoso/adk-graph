@@ -5,7 +5,7 @@ from google.adk import Agent
 from .data import COMPLAINT_CONTACT
 from .schemas import ClaimFacts, DamageEstimate, LetterReview, Triage
 
-MODEL = "gemini-flash-latest"
+MODEL = "gemini-3.8-flash"
 
 
 triage_agent = Agent(
